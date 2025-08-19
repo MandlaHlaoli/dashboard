@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><strong>BEDS TRACKER</strong></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2 id="wardHeading">Ward Overview</h2>
+
+    <div class="controls">
+      <label for="wardFilter">Filter by Ward:</label>
+      <select id="wardFilter">
+        <option value="All">All</option>
+      </select>
+      <button id="saveBtn" onclick="saveChanges()" disabled>Save Changes</button>
+    </div>
+
+    <div id="wardSummary" style="margin-bottom:20px;"></div>
+
+    <table id="bedTable">
+      <thead>
+        <tr>
+          <th>Ward</th>
+          <th>Room</th>
+          <th>Beds (Clinicom)</th>
+          <th>Beds (Assess)</th>
+          <th>Occupied</th>
+          <th>Discharge Pending</th>
+          <th>Free Beds</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <!-- Loader Overlay -->
+  <div id="loaderOverlay">
+    <div class="spinner"></div>
+    <p>Saving changes...</p>
+  </div>
+
+  <script src="https://unpkg.com/backendless/dist/backendless.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
